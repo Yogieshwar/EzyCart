@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.confirmation-container {
+    text-align: center;
+    margin-top: 150px;
+}
+
+.checkmark-animation {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    border: 5px solid #28a745;
+    position: relative;
+    animation: pop 0.5s ease;
+}
+
+.checkmark-animation::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 50px;
+    border-right: 5px solid #28a745;
+    border-bottom: 5px solid #28a745;
+    transform: rotate(45deg);
+    top: 15px;
+    left: 35px;
+}
+
+@keyframes pop {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.order-details {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+    background-color: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-summary {
+    text-align: left;
+}
+
+.order-summary h6 {
+    margin: 10px 0;
+}

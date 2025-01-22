@@ -1,0 +1,36 @@
+.selected-card img{
+    width: 400px;
+    height: 400px;
+}
+
+
+#price{
+    font-size: 1.5rem;
+
+}
+.cart-btn{
+    background-color: black;
+    padding: 10px;
+    letter-spacing: 0.2;
+    color: white;
+    border: none;
+    outline: none;
+    width: 150px;
+    font-weight: 500;
+
+}
+.star-rating {
+    display: flex;
+    direction: row;
+    font-size: 24px;
+    color: #ddd; /* Default star color */
+}
+
+.star {
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.star.filled {
+    color: #f5c518; /* Filled star color (gold) */
+}
