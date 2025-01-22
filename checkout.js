@@ -17,5 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     orderBtn.addEventListener('click',()=>{
         window.location.href='orderConformation.html'
+        localStorage.removeItem('cart');
+        
     })
 });

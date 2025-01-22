@@ -72,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     product.quantity = parseInt(e.target.value);
                     localStorage.setItem('cart', JSON.stringify(cart));
                     displayCartItems();
+                    UpdateCartIconValue();
                 }
             });
         });
@@ -80,12 +81,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.querySelectorAll('.delete-btn').forEach(button => {
             button.addEventListener('click', (e) => {
+                console.log("clicked")
                 let cart = JSON.parse(localStorage.getItem('cart')) || [];
-                let productId = parseInt(e.target.getAttribute('data-id'));
+                let productId = parseInt(e.currentTarget.getAttribute('data-id'));
                 cart = cart.filter(item => item.id !== productId);
                 
                 localStorage.setItem('cart', JSON.stringify(cart));
                 displayCartItems();
+                UpdateCartIconValue();
             });
         });
     }
@@ -96,6 +99,18 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href=('checkout.html')
 
     })
+    function UpdateCartIconValue(){
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let IconVal=document.querySelectorAll(".icon-val")
+        let totalItems=cart.reduce((total,item)=>total+item.quantity,0)
+        IconVal.forEach(cartIcon=>{
+            cartIcon.textContent = totalItems;
+
+        })
+        
+        
+    }
+    UpdateCartIconValue();
     
 });
 
