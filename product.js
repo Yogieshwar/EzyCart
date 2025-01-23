@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     UpdateCartIconValue();
 
     if (product) {
-        productDetails.innerHTML = `
+        productDetails.innerHTML =`
             <div class="product-card">
               <div class="row">
                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 selected-card">
@@ -87,6 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
     }
     UpdateCartIconValue();
+
 })
 
 

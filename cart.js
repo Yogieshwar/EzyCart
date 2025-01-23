@@ -73,6 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     localStorage.setItem('cart', JSON.stringify(cart));
                     displayCartItems();
                     UpdateCartIconValue();
+                    calculateTotalPrice()
                 }
             });
         });
@@ -85,10 +86,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 let cart = JSON.parse(localStorage.getItem('cart')) || [];
                 let productId = parseInt(e.currentTarget.getAttribute('data-id'));
                 cart = cart.filter(item => item.id !== productId);
-                
                 localStorage.setItem('cart', JSON.stringify(cart));
-                displayCartItems();
+                calculateTotalPrice()
                 UpdateCartIconValue();
+                displayCartItems();
+                
+                
             });
         });
     }
