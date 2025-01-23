@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cartButton.addEventListener('click', () => {
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
         const productInCart = cart.find(item => item.id === product.id);
-
+        UpdateCartIconValue();
         if (productInCart) {
             productInCart.quantity += 1;
         } else {
