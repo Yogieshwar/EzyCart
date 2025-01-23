@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let productsPrice = cart.reduce((total, product) => total + (product.price * product.quantity), 0);
         productPricediv .textContent = `$${productsPrice.toFixed(2)}`;
         let totalprice=shippingCharge+productsPrice;
-        totalPricediv.textContent=totalprice;
+        totalPricediv.textContent=`$${totalprice}`;
 
         localStorage.setItem('productsPrice', productsPrice.toFixed(2));
         localStorage.setItem('totalPrice', totalprice.toFixed(2));
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
 
-    // Function to set up event listeners for quantity changes and product deletion
+   
     function setupEventListeners() {
         document.querySelectorAll('.quantity-input').forEach(input => {
             input.addEventListener('change', (e) => {
